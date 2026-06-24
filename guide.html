@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JICON Construction — Grand Strand Renovation Planning Guide</title>
+<link rel="icon" type="image/png" href="assets/img/favicon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--red:#D71F27;--ink:#1a1a1d;--muted:#5b5b63;--line:#e4e4e8}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:#f3f4f6;line-height:1.6}
+  .sheet{max-width:820px;margin:24px auto;background:#fff;padding:0 0 60px;box-shadow:0 20px 60px -24px rgba(0,0,0,.25)}
+  .ghead{background:#0d0d0f;color:#fff;padding:38px 56px 34px;position:relative;overflow:hidden}
+  .ghead::after{content:"";position:absolute;right:-40px;bottom:-40px;width:200px;height:200px;
+    background:radial-gradient(circle,rgba(215,31,39,.35),transparent 70%)}
+  .ghead img{height:46px;margin-bottom:22px}
+  .gkick{font-family:"Archivo";font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--red)}
+  .gtitle{font-family:"Archivo";font-weight:900;font-size:2.3rem;line-height:1.05;margin:.4rem 0 .5rem}
+  .gsub{color:#c9c9cf;max-width:560px}
+  .body{padding:40px 56px 0}
+  h2{font-family:"Archivo";font-weight:800;font-size:1.35rem;margin:34px 0 6px;padding-top:22px;border-top:2px solid var(--line);
+    display:flex;align-items:center;gap:.6rem}
+  h2:first-of-type{border-top:0;padding-top:0;margin-top:6px}
+  h2 .num{display:inline-grid;place-items:center;width:30px;height:30px;background:var(--red);color:#fff;border-radius:8px;
+    font-size:.95rem;flex:none}
+  p.lead{color:var(--muted);margin:.3rem 0 .8rem}
+  ul{margin:.4rem 0 .8rem 0;list-style:none}
+  li{position:relative;padding:.32rem 0 .32rem 1.7rem;color:#2c2c30}
+  li::before{content:"✓";position:absolute;left:0;top:.32rem;color:var(--red);font-weight:800}
+  .check li::before{content:"☐";font-weight:400;color:#9a9aa2;font-size:1.1rem;top:.2rem}
+  table{width:100%;border-collapse:collapse;margin:.6rem 0 1rem;font-size:.94rem}
+  th,td{text-align:left;padding:.6rem .7rem;border-bottom:1px solid var(--line)}
+  th{font-family:"Archivo";background:#faf6f6;color:#0d0d0f}
+  td.r{color:var(--red);font-weight:700;font-family:"Archivo";white-space:nowrap}
+  .note{background:#faf6f6;border-left:4px solid var(--red);padding:.9rem 1.1rem;border-radius:0 8px 8px 0;margin:1rem 0;font-size:.94rem}
+  .cta{margin:40px 56px 0;background:#0d0d0f;color:#fff;border-radius:14px;padding:30px 34px;text-align:center}
+  .cta h3{font-family:"Archivo";font-weight:800;font-size:1.5rem;margin-bottom:.4rem}
+  .cta p{color:#c9c9cf;margin-bottom:1rem}
+  .cta a{display:inline-block;background:var(--red);color:#fff;font-family:"Archivo";font-weight:700;
+    padding:.8rem 1.6rem;border-radius:10px;text-decoration:none;margin:.25rem}
+  .cta a.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.3)}
+  .foot{text-align:center;color:var(--muted);font-size:.82rem;margin-top:26px;padding:0 56px}
+  .printbar{position:sticky;top:0;z-index:5;background:var(--red);color:#fff;text-align:center;padding:11px;font-family:"Archivo";font-weight:700;font-size:.95rem}
+  .printbar button{background:#fff;color:var(--red);border:0;border-radius:7px;padding:.45rem 1.1rem;font-family:"Archivo";font-weight:700;cursor:pointer;margin-left:.6rem}
+  @media print{.printbar{display:none}body{background:#fff}.sheet{box-shadow:none;margin:0;max-width:none}.cta a{border:1px solid #999}}
+  @media(max-width:640px){.ghead,.body,.foot{padding-left:26px;padding-right:26px}.cta{margin-left:26px;margin-right:26px}.gtitle{font-size:1.8rem}}
+</style>
+</head>
+<body>
+<div class="printbar">📘 Your free guide is ready
+  <button onclick="window.print()">Save as PDF / Print</button>
+</div>
+
+<div class="sheet">
+  <header class="ghead">
+    <img src="assets/img/logo-trans.png" alt="JICON Construction" />
+    <div class="gkick">Free Homeowner Resource</div>
+    <h1 class="gtitle">The Grand Strand<br>Renovation Planning Guide</h1>
+    <p class="gsub">Everything you should think through before you start a remodel — from budgeting to hiring — from the team at JICON Construction.</p>
+  </header>
+
+  <div class="body">
+    <h2><span class="num">1</span> Get clear on your goals</h2>
+    <p class="lead">Before you talk pricing, get specific about what "done" looks like. The clearer your vision, the more accurate every estimate will be.</p>
+    <ul>
+      <li>What problem are you solving — space, function, looks, resale, or all of it?</li>
+      <li>Which rooms or areas are in scope (and which are off-limits)?</li>
+      <li>Must-haves vs. nice-to-haves — be honest about the difference</li>
+      <li>Do you plan to stay long-term, or is this to sell? It changes the math.</li>
+    </ul>
+
+    <h2><span class="num">2</span> Set a realistic budget</h2>
+    <p class="lead">Grand Strand ballpark ranges to start the conversation. Final cost depends on size, materials, and condition — always get a written estimate.</p>
+    <table>
+      <tr><th>Project</th><th>Typical range</th></tr>
+      <tr><td>Bathroom remodel</td><td class="r">$8k – $30k</td></tr>
+      <tr><td>Kitchen remodel</td><td class="r">$20k – $70k+</td></tr>
+      <tr><td>Deck / outdoor living</td><td class="r">$6k – $25k</td></tr>
+      <tr><td>Roof replacement</td><td class="r">$8k – $25k</td></tr>
+      <tr><td>Room addition</td><td class="r">$30k – $100k+</td></tr>
+      <tr><td>Flooring (whole home)</td><td class="r">$5k – $20k</td></tr>
+    </table>
+    <div class="note"><strong>Pro tip:</strong> Set aside a <strong>10–15% contingency</strong> for surprises behind the walls (old wiring, water damage, code updates). A good contractor flags these early instead of after demo.</div>
+
+    <h2><span class="num">3</span> Your pre-project checklist</h2>
+    <ul class="check">
+      <li>Collect inspiration photos (Instagram, Pinterest, magazines)</li>
+      <li>Measure the space and note what you want to keep vs. change</li>
+      <li>Decide your firm budget and your stretch budget</li>
+      <li>List your must-have finishes and fixtures</li>
+      <li>Note your ideal start date and any hard deadlines</li>
+      <li>Plan for living around the work (or staying elsewhere)</li>
+    </ul>
+
+    <h2><span class="num">4</span> 10 questions to ask any contractor</h2>
+    <ul>
+      <li>Are you licensed and insured? (Ask to see proof.)</li>
+      <li>Is the work covered by a written contract and warranty?</li>
+      <li>Who is my day-to-day point of contact?</li>
+      <li>Will you handle permits and inspections?</li>
+      <li>What's the payment schedule — and is there a large upfront deposit?</li>
+      <li>Do you use your own crew or subcontractors?</li>
+      <li>What's a realistic timeline, start to finish?</li>
+      <li>How do you handle changes and unexpected issues?</li>
+      <li>Can I see recent local projects or references?</li>
+      <li>How do you keep the site clean and safe?</li>
+    </ul>
+    <div class="note"><strong>Red flags:</strong> no written contract, cash-only, huge upfront deposits, no license/insurance, or pressure to "decide today." A trustworthy contractor welcomes these questions.</div>
+
+    <h2><span class="num">5</span> How JICON works</h2>
+    <p class="lead">We keep it simple and transparent: a free on-site consultation, a clear written estimate, one crew that handles every trade, and a final walkthrough we don't skip. Built on integrity, honesty, and transparency since 2021.</p>
+  </div>
+
+  <div class="cta">
+    <h3>Ready for a free estimate?</h3>
+    <p>Tell us about your project — no pressure, no obligation. We'll get back to you within one business day.</p>
+    <a href="index.html#contact">Request a Free Quote</a>
+    <a class="ghost" href="tel:+18436554121">Call 843-655-4121</a>
+  </div>
+
+  <p class="foot">JICON Construction · Licensed &amp; Insured General Contractor · Serving the Grand Strand, SC<br>
+  843-655-4121 · getJICON@gmail.com · The ranges above are general estimates, not quotes.</p>
+</div>
+</body>
+</html>

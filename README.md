@@ -32,6 +32,21 @@ gallery, keep the same `data-cat` values (`kitchen` / `bath` / `interior` /
 `exterior` / `craft`) and the filter buttons keep working automatically.
 No fake reviews, fake numbers, or fake client names were invented anywhere.
 
+## Lead capture (this is a lead-gen site, not a brochure)
+- **Multi-step quote wizard** (`index.html` → `#wiz`) — opens from every CTA on the
+  page. Project → property type → timeline → budget → contact. One-tap options,
+  progress bar, asks for contact info LAST (converts far better than one big form),
+  live project summary, validation, success screen with tap-to-call.
+- **Exit-intent popup** — fires once per session when a desktop visitor moves to
+  leave (or after deep scroll on mobile). Recovers abandoning traffic.
+- **Lead magnet** — free *Grand Strand Renovation Planning Guide* (`guide.html`, a
+  branded printable/save-as-PDF page). Captures name + email from people who aren't
+  ready to request a quote yet — a second funnel.
+- **Persistent floating "Free Quote" button** (desktop) + sticky call/quote bar (mobile).
+- **Conversion-tracking events** already firing to `window.dataLayer` /`gtag`:
+  `quote_open`, `quote_step`, `quote_submit`, `exit_intent_shown`, `lead_magnet_submit`.
+  Add a GA4 / Google Ads tag and conversions light up with zero extra code.
+
 ## Best-practices baked in (from top GC/remodeler sites)
 - Immersive full-bleed hero + dual CTA (Free Quote + click-to-call)
 - Trust strip (licensed & insured, free estimates, res/commercial, local)
@@ -40,15 +55,16 @@ No fake reviews, fake numbers, or fake client names were invented anywhere.
 - Clear 4-step "how it works" process
 - Values / why-us, honest stats band, reviews CTA, service-area list
 - "We're hiring" careers band (they're actively recruiting) → Apply Now
-- Sticky mobile call/quote bar + click-to-call everywhere
 - LocalBusiness/GeneralContractor JSON-LD schema, OpenGraph, sitemap-ready
 - Fully responsive, accessible, no build step
 
 ## Before it goes live — needs JICON
-1. **Quote form delivery.** Form falls back to opening the visitor's email to
-   `getJICON@gmail.com` (works today). For inline submissions, create a free
-   form at [formspree.io](https://formspree.io) and paste the endpoint into the
-   `action="..."` of `#quoteForm` in `index.html` (replace `your-form-id`).
+1. **Lead delivery (Formspree).** Both the quote wizard and the guide form fall
+   back to email today (the wizard opens a pre-filled email to `getJICON@gmail.com`
+   with every answer). To capture leads automatically, create a free form at
+   [formspree.io](https://formspree.io) and paste the endpoint into the
+   `action="..."` of **`#wizForm`** (and optionally `#guideForm`) in `index.html`,
+   replacing `your-form-id`. Then every wizard submission lands in your inbox/CRM.
 2. **Real project photos** — swap the placeholder gallery/section images.
 3. **Real Google/Facebook review quotes** — drop 2–3 into the Reviews section
    (commented marker in `index.html`).
