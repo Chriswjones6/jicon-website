@@ -430,3 +430,171 @@ a{color:inherit;text-decoration:none}
   .wiz__body{padding:1.4rem}
   .wiz__opt{min-height:84px;font-size:1.5rem}
 }
+
+
+/* ============ VIDEO HERO ============ */
+.hero__video{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero__video iframe{position:absolute;top:50%;left:50%;width:177.78vh;min-width:100%;height:100vh;min-height:56.25vw;transform:translate(-50%,-50%);border:0}
+@media (prefers-reduced-motion:reduce){.hero__video{display:none}}
+
+/* ============ BEFORE / AFTER ============ */
+.ba{position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--bg-3);user-select:none;-webkit-user-select:none;touch-action:none;cursor:ew-resize;margin-bottom:12px;box-shadow:var(--shadow)}
+/* children must not intercept touches — the slider element handles all input */
+.ba__img,.ba__tag,.ba__handle,.ba__worker,.ba__worker svg{pointer-events:none;-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none}
+.ba:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.ba__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba__img--after{clip-path:inset(0 0 0 var(--split,50%))}
+.ba__tag{position:absolute;top:14px;z-index:2;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.ba__tag--before{left:14px;background:rgba(13,13,15,.8);color:var(--white)}
+.ba__tag--after{right:14px;background:var(--red);color:var(--white)}
+.ba__handle{position:absolute;top:0;bottom:0;left:var(--split,50%);width:2px;background:var(--red);transform:translateX(-1px);z-index:3}
+.ba__knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--red);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 6px 20px rgba(0,0,0,.45);cursor:ew-resize}
+.ba__cap{font-size:13px;color:var(--muted);margin-bottom:26px}
+
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:12px}
+.ba-grid .ba{margin-bottom:8px}
+.ba__lbl{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+@media(max-width:860px){.ba-grid{grid-template-columns:1fr}.ba-grid .ba{aspect-ratio:16/10}}
+
+/* ============ Testimonial cards ============ */
+.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:8px 0 26px}
+.tst{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.reviews .tst{background:#fff;border-color:rgba(0,0,0,.08);box-shadow:0 10px 30px -18px rgba(0,0,0,.25)}
+.tst__stars{color:var(--red);letter-spacing:3px;font-size:16px;margin-bottom:12px}
+.tst blockquote{font-size:15px;line-height:1.65;margin-bottom:14px}
+.tst figcaption{font-size:13px;font-weight:600}
+.tst figcaption span{font-weight:400;color:var(--muted)}
+@media(max-width:860px){.tst-grid{grid-template-columns:1fr}}
+
+/* ============ Slider worker character ============ */
+.ba__worker{position:absolute;bottom:0;left:50%;transform:translate(-58%,0);width:58px;height:76px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.45))}
+.ba__worker svg{width:100%;height:100%;display:block;transition:transform .18s ease}
+/* default: standing on the LEFT of the bar, pushing it right */
+.ba.face-left .ba__worker svg{transform:scaleX(-1)}
+.ba.face-left .ba__worker{transform:translate(-42%,0)}
+/* little effort bounce while dragging */
+.ba.dragging .ba__worker svg{animation:push .38s ease-in-out infinite}
+@keyframes push{0%,100%{translate:0 0}50%{translate:1.5px -2px}}
+@media (prefers-reduced-motion:reduce){.ba.dragging .ba__worker svg{animation:none}}
+@media (max-width:860px){.ba__worker{width:48px;height:67px}}
+
+.tst--award{border:2px solid var(--red);position:relative}
+.tst__trophy{font-size:26px;margin-bottom:10px}
+.tst--award blockquote strong{font-size:16px}
+.tst--award figcaption a{color:var(--red);text-decoration:none}
+.tst--award figcaption a:hover{text-decoration:underline}
+
+
+/* ============ WHITE SECTION THEME ============
+   Hero, trust strip, process, careers, contact & footer stay dark;
+   Services, Our Work, About and Reviews go white for contrast. */
+#services, #work, #about, #reviews{background:#ffffff;color:#17171a}
+#work.section--alt, #about.section--alt{background:#f6f6f7}
+#services .section__title, #work .section__title, #about .section__title, #reviews .section__title{color:#141416}
+#services .section__lead, #work .section__lead, #about .section__lead, #reviews .section__lead{color:#55555e}
+#services p, #about p{color:#4a4a52}
+/* service cards on white */
+#services .svc{background:#fff;border-color:rgba(0,0,0,.10);box-shadow:0 12px 30px -18px rgba(0,0,0,.22)}
+#services .svc h3{color:#141416}
+#services .svc p{color:#5a5a63}
+#services .svc-also{color:#55555e}
+#services .svc-also strong{color:#141416}
+/* work section on white */
+#work .filter{color:#4a4a52;border-color:rgba(0,0,0,.18);background:#fff}
+#work .filter.is-active{background:var(--red);border-color:var(--red);color:#fff}
+#work .ba__lbl{color:#141416}
+#work .ba__cap{color:#6a6a72}
+#work .gcard{background:#e9e9ec}
+/* about on light */
+#about .about__body p{color:#4a4a52}
+/* reviews on white */
+#reviews .tst{background:#fff;border:1px solid rgba(0,0,0,.10);box-shadow:0 14px 34px -20px rgba(0,0,0,.25);color:#26262c}
+#reviews .tst blockquote{color:#33333a}
+#reviews .tst figcaption{color:#141416}
+#reviews .tst figcaption span{color:#75757e}
+#reviews .tst--award{border:2px solid var(--red)}
+
+/* ============ Visualize Your Space ============ */
+.viz{background:#101014}
+.viz .section__lead{color:#b8b8c0}
+.viz .section__lead strong{color:#fff}
+.viz__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;margin-top:8px}
+.viz-step{display:flex;gap:14px;margin-bottom:18px}
+.viz-step__n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.viz-step strong{color:#fff;display:block;margin-bottom:2px}
+.viz-step p{color:#a8a8b2;font-size:14.5px;margin:0}
+.viz__ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.viz__fine{margin-top:12px;font-size:12.5px;color:#8b8b95}
+.viz__demo-cap{margin-top:10px;font-size:13px;color:#8b8b95;text-align:center}
+.viz .ba{aspect-ratio:16/10;margin-bottom:0}
+@media(max-width:860px){.viz__grid{grid-template-columns:1fr;gap:28px}}
+
+
+/* ============ ALTERNATING WHITE / BLACK RHYTHM ============
+   Hero WHITE -> strip BLACK -> services WHITE -> work BLACK ->
+   visualize WHITE -> process BLACK -> about WHITE -> stats RED ->
+   reviews WHITE -> areas BLACK -> careers/contact BLACK -> footer BLACK */
+
+/* ---- 1. HERO: white veil over the video, dark text ---- */
+.hero__scrim{background:linear-gradient(100deg,rgba(255,255,255,.94) 8%,rgba(255,255,255,.80) 42%,rgba(255,255,255,.45) 78%),
+             linear-gradient(0deg,rgba(255,255,255,.92),transparent 38%)}
+.hero__title{color:#131316}
+.hero__sub{color:#45454d}
+.hero .kicker--light{color:var(--red)}
+.hero .kicker--light::before{background:var(--red)}
+.hero__trust{color:#3c3c44}
+.hero .btn--ghost{background:rgba(0,0,0,.05);color:#131316;border-color:rgba(0,0,0,.28);backdrop-filter:blur(6px)}
+.hero .btn--ghost:hover{background:rgba(0,0,0,.10)}
+
+/* ---- 4. WORK: back to black (overrides the earlier white-section rules) ---- */
+#work.section--alt{background:#0d0d10;color:var(--ink)}
+#work .section__title{color:#fff}
+#work .section__lead{color:#a9a9b2}
+#work .filter{background:transparent;border-color:rgba(255,255,255,.22);color:#c9c9cf}
+#work .filter.is-active{background:var(--red);border-color:var(--red);color:#fff}
+#work .ba__lbl{color:#fff}
+#work .ba__cap{color:#8f8f99}
+#work .gcard{background:#1a1a1f}
+
+/* ---- 5. VISUALIZE: flip to white ---- */
+.viz{background:#ffffff}
+.viz .section__title--light{color:#141416}
+.viz .section__lead{color:#55555e}
+.viz .section__lead strong{color:#141416}
+.viz-step strong{color:#141416}
+.viz-step p{color:#5a5a63}
+.viz__fine,.viz__demo-cap{color:#75757e}
+.viz .btn--ghost.btn--dark{color:#141416;border-color:rgba(0,0,0,.3);background:transparent}
+.viz .btn--ghost.btn--dark:hover{background:rgba(0,0,0,.06)}
+
+.about__closer{font-style:italic;color:#3c3c44;margin:4px 0 20px;font-size:15.5px}
+
+
+/* ============ CONTRAST FIXES — no white-on-white or black-on-black ============ */
+/* About (white bg): value names were white */
+#about .values li{color:#4a4a52;border-top-color:rgba(0,0,0,.12)}
+#about .values li span{color:#141416}
+#about .about__closer{color:#3c3c44}
+/* Reviews (white bg): ghost button used light ink */
+#reviews .btn--ghost.btn--dark{color:#141416;border-color:rgba(0,0,0,.32);background:transparent}
+#reviews .btn--ghost.btn--dark:hover{background:rgba(0,0,0,.06)}
+/* Services (white bg): any stray light text in cards */
+#services .svc *{--safe:1}
+#services .svc h4, #services .svc strong{color:#141416}
+/* Visualize (white bg): headings inside steps already dark; ensure links/buttons readable */
+.viz a:not(.btn){color:var(--red)}
+/* Safety net: white sections never inherit white headings */
+#services h2,#services h3,#about h2,#about h3,#reviews h2,#reviews h3,.viz h2,.viz h3{color:#141416}
+/* Safety net: dark sections never inherit dark headings */
+#work h2,#work h3,#process h2,#process h3,#areas h2,#areas h3{color:#fff}
+#process .section__lead,#areas .section__lead{color:var(--muted)}
+
+/* ============ Financing band ============ */
+.fin{background:#ffffff;color:#17171a}
+.fin__in{max-width:760px}
+.fin__title{color:#141416}
+.fin__lead{color:#4a4a52;font-size:1.06rem;margin:14px 0 18px}
+.fin__points{list-style:none;margin:0 0 22px;padding:0}
+.fin__points li{padding:7px 0 7px 26px;position:relative;color:#33333a}
+.fin__points li::before{content:"";position:absolute;left:0;top:14px;width:9px;height:9px;background:var(--red);border-radius:2px}
+.fin__fine{margin-top:12px;font-size:12.5px;color:#8a8a93}

@@ -36,7 +36,7 @@
   "email": "getJICON@gmail.com",
   "priceRange": "$$",
   "foundingDate": "2021",
-  "slogan": "Shaping tomorrow, today.",
+  "slogan": "Building tomorrow, today.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "3926 Wesley St, Unit 801",
@@ -98,10 +98,19 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero__bg" style="background-image:url('assets/img/hero-home.jpg')"></div>
+  <!-- VIDEO HERO — muted looping background. The photo above stays as the fallback while
+       the video loads (and on slow connections). TO SWAP IN JICON'S OWN FOOTAGE: upload a
+       drone/jobsite/timelapse clip to the @getJICON YouTube channel (can be Unlisted),
+       then replace VIDEO_ID below in BOTH places. Current ID is a Grand Strand 4K aerial
+       placeholder. -->
+  <div class="hero__video" aria-hidden="true">
+    <iframe src="https://www.youtube.com/embed/cM_r7YTb9Zk?autoplay=1&mute=1&loop=1&playlist=cM_r7YTb9Zk&controls=0&rel=0&modestbranding=1&iv_load_policy=3&start=8"
+      title="Background video" loading="lazy" allow="autoplay; encrypted-media" tabindex="-1"></iframe>
+  </div>
   <div class="hero__scrim"></div>
   <div class="wrap hero__in">
-    <p class="kicker kicker--light">Shaping tomorrow, today</p>
-    <h1 class="hero__title">Renovation &amp; remodeling<br>the Grand Strand can <span class="red">trust.</span></h1>
+    <p class="kicker kicker--light">Building tomorrow, today</p>
+    <h1 class="hero__title">Bringing your vision<br><span class="red">to reality.</span></h1>
     <p class="hero__sub">A licensed &amp; insured general contractor transforming homes and businesses across Myrtle Beach and the Grand Strand — built on integrity, honesty and transparency since 2021.</p>
     <div class="hero__cta">
       <a href="#contact" class="btn btn--red" data-quote="hero">Request a Free Quote</a>
@@ -149,7 +158,7 @@
       <article class="svc">
         <svg class="svc__ic" viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3z"/></svg>
         <h3>Room Additions</h3>
-        <p>Add square footage that fits — bump-outs, in-law suites and second stories done right.</p>
+        <p>Add square footage that fits — bump-outs, in-law suites and sunrooms done right.</p>
       </article>
       <article class="svc">
         <svg class="svc__ic" viewBox="0 0 24 24"><path d="M2 11h20v2H2v-2zm2 4h2v6H4v-6zm5 0h2v6H9v-6zm5 0h2v6h-2v-6zm5 0h2v6h-2v-6zM3 9l9-5 9 5H3z"/></svg>
@@ -174,7 +183,7 @@
       <article class="svc">
         <svg class="svc__ic" viewBox="0 0 24 24"><path d="M2 6h20v12H2V6zm2 2v8h16V8H4zm2 2h3v4H6v-4z"/></svg>
         <h3>Flooring</h3>
-        <p>LVP, hardwood, tile and more — installed flat, tight and built to hold up to traffic.</p>
+        <p>LVP, hardwood, tile and more — installed flat, tight and true.</p>
       </article>
       <article class="svc">
         <svg class="svc__ic" viewBox="0 0 24 24"><path d="M18 2l4 4-2 2-1-1-9.5 9.5-3 1 1-3L17 5l-1-1 2-2zM3 19h10v2H3v-2z"/></svg>
@@ -211,6 +220,190 @@
       <p class="section__lead">A look at the kind of craftsmanship we bring to every project across the Grand Strand. Filter by the space you're dreaming about.</p>
     </div>
 
+    <!-- BEFORE / AFTER — drag the red handles. PLACEHOLDER PAIRS: these images are
+         stand-ins until real before+after photos of the same JICON projects are available.
+         To swap: replace the src values (before image first in each pair). -->
+    <div class="ba-grid">
+      <div>
+        <div class="ba" tabindex="0" role="slider" aria-label="Kitchen before and after — drag or use arrow keys" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <img class="ba__img ba__img--before" src="assets/img/work-crew.jpg" alt="Kitchen project in progress">
+          <img class="ba__img ba__img--after" src="assets/img/kitchen-1.jpg" alt="Finished kitchen remodel">
+          <span class="ba__tag ba__tag--before">Before</span>
+          <span class="ba__tag ba__tag--after">After</span>
+          <div class="ba__handle"><span class="ba__worker" aria-hidden="true"><svg viewBox="0 0 76 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- realistic crew member, side profile, pushing the bar -->
+            <ellipse cx="34" cy="96" rx="22" ry="3.5" fill="rgba(0,0,0,.35)"/>
+            <g>
+              <!-- back leg (extended, driving the push) -->
+              <path d="M27 56 Q22 66 17 78 L13 92 L20 94 L26 80 Q30 70 33 60 Z" fill="#23232a"/>
+              <!-- back boot -->
+              <path d="M12 90 L21 92 L21 96 Q12 97 8 95 Q8 91 12 90 Z" fill="#5c3d24"/>
+              <path d="M8 94.5 Q13 96.5 21 95.5 L21 97 Q12 98 8 96 Z" fill="#2b1c10"/>
+              <!-- front leg (bent, braced) -->
+              <path d="M33 55 Q40 62 44 70 L46 90 L54 90 L50 68 Q46 58 41 52 Z" fill="#2d2d35"/>
+              <path d="M40 60 Q44 66 46 72 L47 80 L44 80 L42 70 Q40 64 38 60 Z" fill="#3a3a44" opacity=".7"/>
+              <!-- front boot -->
+              <path d="M45 88 L55 88 L58 92 Q58 96 54 96 L45 96 Z" fill="#6b4a2c"/>
+              <path d="M45 94 L58 94 Q58 97 54 97 L45 97 Z" fill="#2b1c10"/>
+              <!-- torso leaning into the bar -->
+              <path d="M30 34 Q36 30 42 32 L52 38 Q54 46 50 56 Q42 60 33 57 Q28 46 30 34 Z" fill="#1c1c22"/>
+              <!-- red safety vest -->
+              <path d="M32 34 Q37 31 42 33 L50 38 Q52 45 49 54 Q41 58 34 55 Q30 45 32 34 Z" fill="#D71F27"/>
+              <path d="M31 41 L50 46 L49.4 50 L30.8 45 Z" fill="#eceff2"/>
+              <path d="M33 34.5 Q37 32 41 33.5 L41.8 37.5 Q37 36 33.6 38 Z" fill="#b0161d"/>
+              <!-- upper arm + forearm reaching to bar -->
+              <path d="M44 36 Q54 34 63 36 L63 41 Q53 40 45 41 Z" fill="#1c1c22"/>
+              <path d="M46 47 Q56 48 64 50 L63.5 55 Q54 53 45 52 Z" fill="#26262e"/>
+              <!-- work gloves -->
+              <path d="M62 34.5 Q68 34 70 37 Q70 41 66 41.5 L62 41 Z" fill="#c99a5f"/>
+              <path d="M63 49 Q69 50 70.5 53 Q70 56.5 66 56 L62.5 55 Z" fill="#c99a5f"/>
+              <!-- neck + head, slight forward tilt -->
+              <path d="M41 30 L46 28 L47 33 L42 34 Z" fill="#e0a67c"/>
+              <circle cx="47" cy="21" r="8.2" fill="#e8b48a"/>
+              <!-- nose + jaw hint -->
+              <path d="M54.5 20 Q56.5 21.5 55 23.5 L53 23 Z" fill="#e0a67c"/>
+              <path d="M50 27 Q52.5 26.5 54 24.5 Q53.5 28 50.5 28.8 Z" fill="#d99e73"/>
+              <!-- ear -->
+              <circle cx="45" cy="21.5" r="1.8" fill="#d99e73"/>
+              <!-- friendly face -->
+              <ellipse cx="51.2" cy="21.2" rx="1.3" ry="1.7" fill="#2a2118"/>
+              <circle cx="51.6" cy="20.6" r="0.45" fill="#fff"/>
+              <path d="M50.8 24.6 Q52.6 26.2 54.6 24.6" fill="none" stroke="#7a4a33" stroke-width="1.1" stroke-linecap="round"/>
+              <circle cx="49.6" cy="23.4" r="1.4" fill="#e07a5f" opacity=".28"/>
+              <!-- hair at the back -->
+              <path d="M40 19 Q39.5 24 41.5 26.5 Q39 25 38.8 21.5 Z" fill="#3a2c22"/>
+              <!-- red hard hat with ridge + brim -->
+              <path d="M38.5 17 A9.4 9.4 0 0 1 55.5 14.2 L56.5 17.5 Z" fill="#D71F27"/>
+              <path d="M45 9.5 Q47.5 8.6 50 9.5 L50.5 13 Q47.6 12.2 44.6 13 Z" fill="#ef3b42"/>
+              <path d="M36.5 16.5 L58.5 16.5 Q60 17 59.8 18.6 Q59.6 20 58 20 L37.5 19.6 Q36 19.4 36 18 Q36 16.8 36.5 16.5 Z" fill="#a4141b"/>
+              <!-- hat sheen -->
+              <path d="M40 13.5 Q42 10.5 45.5 9.8 Q42.5 12.5 41.6 15.5 Z" fill="#ffffff" opacity=".22"/>
+            </g>
+          </svg></span></div>
+        </div>
+        <p class="ba__lbl">Kitchen remodel</p>
+      </div>
+      <div>
+        <div class="ba" tabindex="0" role="slider" aria-label="Bathroom before and after — drag or use arrow keys" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <img class="ba__img ba__img--before" src="assets/img/work-tool.jpg" alt="Bathroom under construction">
+          <img class="ba__img ba__img--after" src="assets/img/bath-1.jpg" alt="Finished bathroom renovation">
+          <span class="ba__tag ba__tag--before">Before</span>
+          <span class="ba__tag ba__tag--after">After</span>
+          <div class="ba__handle"><span class="ba__worker" aria-hidden="true"><svg viewBox="0 0 76 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- realistic crew member, side profile, pushing the bar -->
+            <ellipse cx="34" cy="96" rx="22" ry="3.5" fill="rgba(0,0,0,.35)"/>
+            <g>
+              <!-- back leg (extended, driving the push) -->
+              <path d="M27 56 Q22 66 17 78 L13 92 L20 94 L26 80 Q30 70 33 60 Z" fill="#23232a"/>
+              <!-- back boot -->
+              <path d="M12 90 L21 92 L21 96 Q12 97 8 95 Q8 91 12 90 Z" fill="#5c3d24"/>
+              <path d="M8 94.5 Q13 96.5 21 95.5 L21 97 Q12 98 8 96 Z" fill="#2b1c10"/>
+              <!-- front leg (bent, braced) -->
+              <path d="M33 55 Q40 62 44 70 L46 90 L54 90 L50 68 Q46 58 41 52 Z" fill="#2d2d35"/>
+              <path d="M40 60 Q44 66 46 72 L47 80 L44 80 L42 70 Q40 64 38 60 Z" fill="#3a3a44" opacity=".7"/>
+              <!-- front boot -->
+              <path d="M45 88 L55 88 L58 92 Q58 96 54 96 L45 96 Z" fill="#6b4a2c"/>
+              <path d="M45 94 L58 94 Q58 97 54 97 L45 97 Z" fill="#2b1c10"/>
+              <!-- torso leaning into the bar -->
+              <path d="M30 34 Q36 30 42 32 L52 38 Q54 46 50 56 Q42 60 33 57 Q28 46 30 34 Z" fill="#1c1c22"/>
+              <!-- red safety vest -->
+              <path d="M32 34 Q37 31 42 33 L50 38 Q52 45 49 54 Q41 58 34 55 Q30 45 32 34 Z" fill="#D71F27"/>
+              <path d="M31 41 L50 46 L49.4 50 L30.8 45 Z" fill="#eceff2"/>
+              <path d="M33 34.5 Q37 32 41 33.5 L41.8 37.5 Q37 36 33.6 38 Z" fill="#b0161d"/>
+              <!-- upper arm + forearm reaching to bar -->
+              <path d="M44 36 Q54 34 63 36 L63 41 Q53 40 45 41 Z" fill="#1c1c22"/>
+              <path d="M46 47 Q56 48 64 50 L63.5 55 Q54 53 45 52 Z" fill="#26262e"/>
+              <!-- work gloves -->
+              <path d="M62 34.5 Q68 34 70 37 Q70 41 66 41.5 L62 41 Z" fill="#c99a5f"/>
+              <path d="M63 49 Q69 50 70.5 53 Q70 56.5 66 56 L62.5 55 Z" fill="#c99a5f"/>
+              <!-- neck + head, slight forward tilt -->
+              <path d="M41 30 L46 28 L47 33 L42 34 Z" fill="#e0a67c"/>
+              <circle cx="47" cy="21" r="8.2" fill="#e8b48a"/>
+              <!-- nose + jaw hint -->
+              <path d="M54.5 20 Q56.5 21.5 55 23.5 L53 23 Z" fill="#e0a67c"/>
+              <path d="M50 27 Q52.5 26.5 54 24.5 Q53.5 28 50.5 28.8 Z" fill="#d99e73"/>
+              <!-- ear -->
+              <circle cx="45" cy="21.5" r="1.8" fill="#d99e73"/>
+              <!-- friendly face -->
+              <ellipse cx="51.2" cy="21.2" rx="1.3" ry="1.7" fill="#2a2118"/>
+              <circle cx="51.6" cy="20.6" r="0.45" fill="#fff"/>
+              <path d="M50.8 24.6 Q52.6 26.2 54.6 24.6" fill="none" stroke="#7a4a33" stroke-width="1.1" stroke-linecap="round"/>
+              <circle cx="49.6" cy="23.4" r="1.4" fill="#e07a5f" opacity=".28"/>
+              <!-- hair at the back -->
+              <path d="M40 19 Q39.5 24 41.5 26.5 Q39 25 38.8 21.5 Z" fill="#3a2c22"/>
+              <!-- red hard hat with ridge + brim -->
+              <path d="M38.5 17 A9.4 9.4 0 0 1 55.5 14.2 L56.5 17.5 Z" fill="#D71F27"/>
+              <path d="M45 9.5 Q47.5 8.6 50 9.5 L50.5 13 Q47.6 12.2 44.6 13 Z" fill="#ef3b42"/>
+              <path d="M36.5 16.5 L58.5 16.5 Q60 17 59.8 18.6 Q59.6 20 58 20 L37.5 19.6 Q36 19.4 36 18 Q36 16.8 36.5 16.5 Z" fill="#a4141b"/>
+              <!-- hat sheen -->
+              <path d="M40 13.5 Q42 10.5 45.5 9.8 Q42.5 12.5 41.6 15.5 Z" fill="#ffffff" opacity=".22"/>
+            </g>
+          </svg></span></div>
+        </div>
+        <p class="ba__lbl">Bathroom renovation</p>
+      </div>
+      <div>
+        <div class="ba" tabindex="0" role="slider" aria-label="Interior before and after — drag or use arrow keys" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <img class="ba__img ba__img--before" src="assets/img/work-trim.jpg" alt="Interior trim work in progress">
+          <img class="ba__img ba__img--after" src="assets/img/interior-1.jpg" alt="Finished open-concept interior">
+          <span class="ba__tag ba__tag--before">Before</span>
+          <span class="ba__tag ba__tag--after">After</span>
+          <div class="ba__handle"><span class="ba__worker" aria-hidden="true"><svg viewBox="0 0 76 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- realistic crew member, side profile, pushing the bar -->
+            <ellipse cx="34" cy="96" rx="22" ry="3.5" fill="rgba(0,0,0,.35)"/>
+            <g>
+              <!-- back leg (extended, driving the push) -->
+              <path d="M27 56 Q22 66 17 78 L13 92 L20 94 L26 80 Q30 70 33 60 Z" fill="#23232a"/>
+              <!-- back boot -->
+              <path d="M12 90 L21 92 L21 96 Q12 97 8 95 Q8 91 12 90 Z" fill="#5c3d24"/>
+              <path d="M8 94.5 Q13 96.5 21 95.5 L21 97 Q12 98 8 96 Z" fill="#2b1c10"/>
+              <!-- front leg (bent, braced) -->
+              <path d="M33 55 Q40 62 44 70 L46 90 L54 90 L50 68 Q46 58 41 52 Z" fill="#2d2d35"/>
+              <path d="M40 60 Q44 66 46 72 L47 80 L44 80 L42 70 Q40 64 38 60 Z" fill="#3a3a44" opacity=".7"/>
+              <!-- front boot -->
+              <path d="M45 88 L55 88 L58 92 Q58 96 54 96 L45 96 Z" fill="#6b4a2c"/>
+              <path d="M45 94 L58 94 Q58 97 54 97 L45 97 Z" fill="#2b1c10"/>
+              <!-- torso leaning into the bar -->
+              <path d="M30 34 Q36 30 42 32 L52 38 Q54 46 50 56 Q42 60 33 57 Q28 46 30 34 Z" fill="#1c1c22"/>
+              <!-- red safety vest -->
+              <path d="M32 34 Q37 31 42 33 L50 38 Q52 45 49 54 Q41 58 34 55 Q30 45 32 34 Z" fill="#D71F27"/>
+              <path d="M31 41 L50 46 L49.4 50 L30.8 45 Z" fill="#eceff2"/>
+              <path d="M33 34.5 Q37 32 41 33.5 L41.8 37.5 Q37 36 33.6 38 Z" fill="#b0161d"/>
+              <!-- upper arm + forearm reaching to bar -->
+              <path d="M44 36 Q54 34 63 36 L63 41 Q53 40 45 41 Z" fill="#1c1c22"/>
+              <path d="M46 47 Q56 48 64 50 L63.5 55 Q54 53 45 52 Z" fill="#26262e"/>
+              <!-- work gloves -->
+              <path d="M62 34.5 Q68 34 70 37 Q70 41 66 41.5 L62 41 Z" fill="#c99a5f"/>
+              <path d="M63 49 Q69 50 70.5 53 Q70 56.5 66 56 L62.5 55 Z" fill="#c99a5f"/>
+              <!-- neck + head, slight forward tilt -->
+              <path d="M41 30 L46 28 L47 33 L42 34 Z" fill="#e0a67c"/>
+              <circle cx="47" cy="21" r="8.2" fill="#e8b48a"/>
+              <!-- nose + jaw hint -->
+              <path d="M54.5 20 Q56.5 21.5 55 23.5 L53 23 Z" fill="#e0a67c"/>
+              <path d="M50 27 Q52.5 26.5 54 24.5 Q53.5 28 50.5 28.8 Z" fill="#d99e73"/>
+              <!-- ear -->
+              <circle cx="45" cy="21.5" r="1.8" fill="#d99e73"/>
+              <!-- friendly face -->
+              <ellipse cx="51.2" cy="21.2" rx="1.3" ry="1.7" fill="#2a2118"/>
+              <circle cx="51.6" cy="20.6" r="0.45" fill="#fff"/>
+              <path d="M50.8 24.6 Q52.6 26.2 54.6 24.6" fill="none" stroke="#7a4a33" stroke-width="1.1" stroke-linecap="round"/>
+              <circle cx="49.6" cy="23.4" r="1.4" fill="#e07a5f" opacity=".28"/>
+              <!-- hair at the back -->
+              <path d="M40 19 Q39.5 24 41.5 26.5 Q39 25 38.8 21.5 Z" fill="#3a2c22"/>
+              <!-- red hard hat with ridge + brim -->
+              <path d="M38.5 17 A9.4 9.4 0 0 1 55.5 14.2 L56.5 17.5 Z" fill="#D71F27"/>
+              <path d="M45 9.5 Q47.5 8.6 50 9.5 L50.5 13 Q47.6 12.2 44.6 13 Z" fill="#ef3b42"/>
+              <path d="M36.5 16.5 L58.5 16.5 Q60 17 59.8 18.6 Q59.6 20 58 20 L37.5 19.6 Q36 19.4 36 18 Q36 16.8 36.5 16.5 Z" fill="#a4141b"/>
+              <!-- hat sheen -->
+              <path d="M40 13.5 Q42 10.5 45.5 9.8 Q42.5 12.5 41.6 15.5 Z" fill="#ffffff" opacity=".22"/>
+            </g>
+          </svg></span></div>
+        </div>
+        <p class="ba__lbl">Interior renovation</p>
+      </div>
+    </div>
+    <p class="ba__cap">Grab the crew member and drag &middot; placeholder pairs — swapping in real JICON before &amp; after photos</p>
+
     <div class="filters" id="filters">
       <button class="filter is-active" data-filter="all">All</button>
       <button class="filter" data-filter="kitchen">Kitchens</button>
@@ -239,6 +432,92 @@
   </div>
 </section>
 
+<!-- ============ VISUALIZE YOUR SPACE (Level 1 — free AI mockup by request) ============ -->
+<section class="section viz" id="visualize">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker">See it before you decide</p>
+      <h2 class="section__title section__title--light">Visualize your space.</h2>
+      <p class="section__lead">Wondering how new floors, a fresh wall color or a fireplace would look in <em>your</em> room? Send us a photo and we'll send back a <strong>free AI-generated mockup</strong> of the finished result &mdash; no cost, no obligation.</p>
+    </div>
+
+    <div class="viz__grid">
+      <div class="viz__steps">
+        <div class="viz-step"><span class="viz-step__n">1</span><div><strong>Snap a photo</strong><p>Stand back and get the whole room in frame &mdash; daylight works best.</p></div></div>
+        <div class="viz-step"><span class="viz-step__n">2</span><div><strong>Tell us the dream</strong><p>New flooring? A fireplace? Different wall color? A quick sentence is plenty.</p></div></div>
+        <div class="viz-step"><span class="viz-step__n">3</span><div><strong>Get your mockup</strong><p>We'll send back a picture of your room, reimagined &mdash; usually within a couple of days.</p></div></div>
+        <div class="viz__ctas">
+          <a class="btn btn--red" href="sms:+18436554121?&body=Hi%20JICO%20Construction!%20Here%27s%20a%20photo%20of%20my%20room%20%E2%80%94%20I%27d%20love%20to%20see%20it%20with%3A%20">&#128172; Text us your photo</a>
+          <a class="btn btn--ghost btn--dark" href="mailto:getJICON@gmail.com?subject=Visualize%20My%20Space%20%E2%80%94%20Free%20Mockup&body=Hi%20JICO%20Construction%2C%0A%0AAttached%20is%20a%20photo%20of%20my%20room.%0A%0AWhat%20I%27d%20love%20to%20see%20changed%3A%20%0A%0AName%3A%20%0APhone%3A%20">&#128231; Email your photo</a>
+        </div>
+        <p class="viz__fine">Free &middot; no obligation &middot; your photo is only used to create your mockup.</p>
+      </div>
+
+      <div class="viz__demo">
+        <!-- EXAMPLE SLIDER — placeholder pair. Best upgrade: photograph one of your own
+             rooms, generate a real AI mockup of it, and use that true pair here. -->
+        <div class="ba" tabindex="0" role="slider" aria-label="Room mockup example — drag or use arrow keys" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <img class="ba__img ba__img--before" src="assets/img/work-design.jpg" alt="Room as it is today">
+          <img class="ba__img ba__img--after" src="assets/img/interior-2.jpg" alt="The same room reimagined">
+          <span class="ba__tag ba__tag--before">Your room</span>
+          <span class="ba__tag ba__tag--after">Reimagined</span>
+          <div class="ba__handle"><span class="ba__worker" aria-hidden="true"><svg viewBox="0 0 76 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- realistic crew member, side profile, pushing the bar -->
+            <ellipse cx="34" cy="96" rx="22" ry="3.5" fill="rgba(0,0,0,.35)"/>
+            <g>
+              <!-- back leg (extended, driving the push) -->
+              <path d="M27 56 Q22 66 17 78 L13 92 L20 94 L26 80 Q30 70 33 60 Z" fill="#23232a"/>
+              <!-- back boot -->
+              <path d="M12 90 L21 92 L21 96 Q12 97 8 95 Q8 91 12 90 Z" fill="#5c3d24"/>
+              <path d="M8 94.5 Q13 96.5 21 95.5 L21 97 Q12 98 8 96 Z" fill="#2b1c10"/>
+              <!-- front leg (bent, braced) -->
+              <path d="M33 55 Q40 62 44 70 L46 90 L54 90 L50 68 Q46 58 41 52 Z" fill="#2d2d35"/>
+              <path d="M40 60 Q44 66 46 72 L47 80 L44 80 L42 70 Q40 64 38 60 Z" fill="#3a3a44" opacity=".7"/>
+              <!-- front boot -->
+              <path d="M45 88 L55 88 L58 92 Q58 96 54 96 L45 96 Z" fill="#6b4a2c"/>
+              <path d="M45 94 L58 94 Q58 97 54 97 L45 97 Z" fill="#2b1c10"/>
+              <!-- torso leaning into the bar -->
+              <path d="M30 34 Q36 30 42 32 L52 38 Q54 46 50 56 Q42 60 33 57 Q28 46 30 34 Z" fill="#1c1c22"/>
+              <!-- red safety vest -->
+              <path d="M32 34 Q37 31 42 33 L50 38 Q52 45 49 54 Q41 58 34 55 Q30 45 32 34 Z" fill="#D71F27"/>
+              <path d="M31 41 L50 46 L49.4 50 L30.8 45 Z" fill="#eceff2"/>
+              <path d="M33 34.5 Q37 32 41 33.5 L41.8 37.5 Q37 36 33.6 38 Z" fill="#b0161d"/>
+              <!-- upper arm + forearm reaching to bar -->
+              <path d="M44 36 Q54 34 63 36 L63 41 Q53 40 45 41 Z" fill="#1c1c22"/>
+              <path d="M46 47 Q56 48 64 50 L63.5 55 Q54 53 45 52 Z" fill="#26262e"/>
+              <!-- work gloves -->
+              <path d="M62 34.5 Q68 34 70 37 Q70 41 66 41.5 L62 41 Z" fill="#c99a5f"/>
+              <path d="M63 49 Q69 50 70.5 53 Q70 56.5 66 56 L62.5 55 Z" fill="#c99a5f"/>
+              <!-- neck + head, slight forward tilt -->
+              <path d="M41 30 L46 28 L47 33 L42 34 Z" fill="#e0a67c"/>
+              <circle cx="47" cy="21" r="8.2" fill="#e8b48a"/>
+              <!-- nose + jaw hint -->
+              <path d="M54.5 20 Q56.5 21.5 55 23.5 L53 23 Z" fill="#e0a67c"/>
+              <path d="M50 27 Q52.5 26.5 54 24.5 Q53.5 28 50.5 28.8 Z" fill="#d99e73"/>
+              <!-- ear -->
+              <circle cx="45" cy="21.5" r="1.8" fill="#d99e73"/>
+              <!-- friendly face -->
+              <ellipse cx="51.2" cy="21.2" rx="1.3" ry="1.7" fill="#2a2118"/>
+              <circle cx="51.6" cy="20.6" r="0.45" fill="#fff"/>
+              <path d="M50.8 24.6 Q52.6 26.2 54.6 24.6" fill="none" stroke="#7a4a33" stroke-width="1.1" stroke-linecap="round"/>
+              <circle cx="49.6" cy="23.4" r="1.4" fill="#e07a5f" opacity=".28"/>
+              <!-- hair at the back -->
+              <path d="M40 19 Q39.5 24 41.5 26.5 Q39 25 38.8 21.5 Z" fill="#3a2c22"/>
+              <!-- red hard hat with ridge + brim -->
+              <path d="M38.5 17 A9.4 9.4 0 0 1 55.5 14.2 L56.5 17.5 Z" fill="#D71F27"/>
+              <path d="M45 9.5 Q47.5 8.6 50 9.5 L50.5 13 Q47.6 12.2 44.6 13 Z" fill="#ef3b42"/>
+              <path d="M36.5 16.5 L58.5 16.5 Q60 17 59.8 18.6 Q59.6 20 58 20 L37.5 19.6 Q36 19.4 36 18 Q36 16.8 36.5 16.5 Z" fill="#a4141b"/>
+              <!-- hat sheen -->
+              <path d="M40 13.5 Q42 10.5 45.5 9.8 Q42.5 12.5 41.6 15.5 Z" fill="#ffffff" opacity=".22"/>
+            </g>
+          </svg></span></div>
+        </div>
+        <p class="viz__demo-cap">Example &mdash; drag to compare</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROCESS ============ -->
 <section class="section" id="process">
   <div class="wrap">
@@ -260,7 +539,7 @@
       </li>
       <li class="step">
         <span class="step__no">03</span>
-        <h3>We Build</h3>
+        <h3>We Get to Work</h3>
         <p>Our crew handles every trade and keeps the site clean. You always know who to call and what's next.</p>
       </li>
       <li class="step">
@@ -278,20 +557,21 @@
     <div class="about__media">
       <img src="assets/img/work-design.jpg" alt="Reviewing finishes and plans with a client" loading="lazy" />
       <div class="about__badge">
-        <strong>Since 2021</strong>
-        <span>Building on a decade in property &amp; renovation</span>
+        <strong>Est. 2021</strong>
+        <span>Backed by 13 years of home remodeling</span>
       </div>
     </div>
     <div class="about__body">
       <p class="kicker">Who we are</p>
       <h2 class="section__title">Quality meets trust.</h2>
-      <p>JICON Construction was founded in 2021 on a simple idea: renovations should be handled with the same care we'd give our own homes. Our roots run back more than a decade in property acquisition and renovation — so we understand a project from both sides: the craftsmanship and the investment.</p>
-      <p>We're a licensed and insured general contractor specializing in residential and commercial renovations throughout the Grand Strand. From the first walkthrough to the final cleanup, we lead with three things:</p>
+      <p>At JICO Construction, our journey began a decade ago with a vision for revitalizing properties through a unique blend of acquisition, renovation, and then rental. Established officially in 2021, we've seamlessly extended our expertise from our initial ventures into the broader community of the Grand Strand market of South Carolina.</p>
+      <p>What sets us apart is our foundation of integrity, honesty, and transparency. Our roots in the rental industry have shaped our commitment to excellence &mdash; and now, as a general contracting force, we bring that same dedication to every project we undertake:</p>
       <ul class="values">
         <li><span>Integrity</span>We do what we say — even when it's the harder, more expensive right thing.</li>
         <li><span>Honesty</span>Straight answers on scope, timeline and cost. No moving targets.</li>
         <li><span>Transparency</span>You see the plan, the pricing and the progress at every step.</li>
       </ul>
+      <p class="about__closer">Join us in creating a future where quality meets trust &mdash; and where your vision becomes reality with JICO Construction.</p>
       <a href="#contact" class="btn btn--red" data-quote="about">Let's create something together</a>
     </div>
   </div>
@@ -300,10 +580,14 @@
 <!-- ============ STATS ============ -->
 <section class="stats">
   <div class="wrap stats__in">
-    <div class="stat"><span class="stat__num">2021</span><span class="stat__lbl">Proudly building since</span></div>
-    <div class="stat"><span class="stat__num">100%</span><span class="stat__lbl">Licensed &amp; insured</span></div>
-    <div class="stat"><span class="stat__num">16+</span><span class="stat__lbl">Services under one roof</span></div>
-    <div class="stat"><span class="stat__num">Free</span><span class="stat__lbl">Estimates, always</span></div>
+    <div class="stat"><span class="stat__num" data-count="2021" data-plain="1">2021</span><span class="stat__lbl">Established &mdash; backed by 13 years of remodeling</span></div>
+    <div class="stat"><span class="stat__num" data-count="138" data-suffix="+">138+</span><span class="stat__lbl">Successful projects completed</span></div>
+    <div class="stat"><span class="stat__num" data-count="323500">323,500</span><span class="stat__lbl">Sq ft of flooring installed</span></div>
+    <div class="stat"><span class="stat__num" data-count="100" data-suffix="%">100%</span><span class="stat__lbl">Licensed &amp; insured</span></div>
+    <!-- MORE COUNTER IDEAS — uncomment any, set real values:
+    <div class="stat"><span class="stat__num" data-count="0" data-suffix="+">0</span><span class="stat__lbl">Decks built</span></div>
+    <div class="stat"><span class="stat__num" data-count="0" data-suffix="+">0</span><span class="stat__lbl">Combined years of trade experience</span></div>
+    <div class="stat"><span class="stat__num" data-count="0" data-suffix="">0</span><span class="stat__lbl">5-star Google reviews</span></div> -->
   </div>
   <!-- NOTE FOR JICON: when you're ready, swap any of these for real numbers
        (e.g. projects completed, sq ft of flooring installed, happy clients). -->
@@ -311,22 +595,48 @@
 
 <!-- ============ REVIEWS CTA ============ -->
 <section class="section reviews" id="reviews">
-  <div class="wrap reviews__in">
-    <div>
+  <div class="wrap">
+    <div class="section__head">
       <p class="kicker">Reputation</p>
-      <h2 class="section__title">Trusted by Grand Strand homeowners.</h2>
-      <p class="section__lead">The best measure of our work is what our clients say about it. See real reviews — and when we finish your project, we'd be grateful for yours.</p>
-      <div class="reviews__btns">
-        <a href="https://facebook.com/getJICON" target="_blank" rel="noopener" class="btn btn--ghost btn--dark">Read Facebook Reviews</a>
-        <a href="https://instagram.com/getjicon" target="_blank" rel="noopener" class="btn btn--ghost btn--dark">See Our Work on Instagram</a>
-      </div>
+      <h2 class="section__title">What our clients say.</h2>
+      <p class="section__lead">The best measure of our work is what the people who hired us say about it.</p>
     </div>
-    <div class="reviews__stars">
-      <div class="stars">★★★★★</div>
-      <p>Built on integrity, honesty &amp; transparency</p>
+
+    <!-- ⚠ PLACEHOLDER REVIEWS — replace each quote + name with the EXACT text of a real
+         Google review before publishing. Never edit or invent review text. -->
+    <div class="tst-grid">
+      <figure class="tst">
+        <div class="tst__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>This was a 3 bedroom, 2.5 bath house completely destroyed, had 2 layers of flooring, walls throughout were beat up. Everything in the bathrooms and kitchen stripped out. There was also a detached garage w/an apartment above it. That was in worse shape than the house believe or not. Full bath, kitchen, sink. All that was torn out, and redone. Jicon did a great job. Very timely and accurate, I couldn't have been happier!</blockquote>
+        <figcaption>David G. &middot; <span>Google review &middot; Feb 2024</span></figcaption>
+      </figure>
+      <figure class="tst">
+        <div class="tst__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>JICO Construction went above and beyond my expectations. They did an exceptional job with my home. They gutted and renovated my home with new cabinets, granite counter-tops, new flooring, lighting, paint, and renovated bathrooms. No surprises, no extra cost, very reliable and completed on time. The entire crew is amazing to work with. I would absolutely use them again!!</blockquote>
+        <figcaption>Charlie Buxani &middot; <span>Google review</span></figcaption>
+      </figure>
+      <figure class="tst">
+        <div class="tst__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Our experience with Kelly and Chris was excellent. Starting with our vision and building it better than we imagined. Kelly was extremely helpful with the design elements and Chris paid attention to even the smallest details ensuring everything was built to his high standards. Every member of their team brought quality workmanship to the project. I highly recommend JICON!</blockquote>
+        <figcaption>Sheryl Sypek &middot; <span>Google review</span></figcaption>
+      </figure>
+      <!-- AWARD CARD (removed per Chris — saved here if wanted later):
+<figure class="tst tst--award">
+        <div class="tst__trophy" aria-hidden="true">&#127942;</div>
+        <blockquote><strong>Best General Contractor in Myrtle Beach &mdash; 2026</strong><br>Recognized by Quality Business Awards with a quality score of 95%+ for excellence and customer satisfaction.</blockquote>
+        <figcaption>Quality Business Awards &middot; <span><a href="https://qualitybusinessawards.com/2026/the-best-General-Contractor-in-Myrtle-Beach-South-Carolina/JICO-Construction-LLC" target="_blank" rel="noopener">View the award</a></span></figcaption>
+      </figure>
+      -->
+      <!-- SWAP OPTION: when a third real review comes in, this award card can move
+           elsewhere (e.g. hero trust strip) and a review card takes this slot. -->
+    </div>
+
+    <div class="reviews__btns">
+      <!-- TODO: replace GOOGLE_REVIEW_LINK with the JICON Google Business Profile share link -->
+      <a href="GOOGLE_REVIEW_LINK" target="_blank" rel="noopener" class="btn btn--red">Read all Google reviews</a>
+      <a href="https://facebook.com/getJICON" target="_blank" rel="noopener" class="btn btn--ghost btn--dark">Facebook reviews</a>
     </div>
   </div>
-  <!-- NOTE FOR JICON: paste 2-3 of your favorite real Google/Facebook review quotes here as cards once you have them. -->
 </section>
 
 <!-- ============ SERVICE AREA ============ -->
@@ -359,13 +669,34 @@
   <div class="careers__scrim"></div>
   <div class="wrap careers__in">
     <p class="kicker kicker--light">We're hiring</p>
-    <h2 class="section__title section__title--light">Join the JICON crew.</h2>
+    <h2 class="section__title section__title--light">Join the JICO Construction crew.</h2>
     <p class="careers__lead">We're always looking for motivated, hard-working people who take pride in their craft. If that's you, we want to hear from you.</p>
     <a href="mailto:getJICON@gmail.com?subject=Careers%20—%20Application%20%2F%20Resume&body=Hi%20JICON%20team%2C%0A%0AName%3A%0APhone%3A%0ATrade%2Fexperience%3A%0A%0A(Please%20attach%20your%20resume.)" class="btn btn--red">Apply Now</a>
   </div>
 </section>
 
 <!-- ============ CONTACT / QUOTE ============ -->
+<!-- ============ FINANCING (white band before contact) ============
+     TODO BEFORE/AFTER LAUNCH: sign up at wisetack.com (contractor account, ~10 min,
+     ~24hr approval). Then replace href="#contact" on the button below with your
+     personal Wisetack financing link so homeowners can check options directly. -->
+<section class="section fin" id="financing">
+  <div class="wrap fin__in">
+    <div>
+      <p class="kicker">Financing available</p>
+      <h2 class="section__title fin__title">Big project. Comfortable monthly payment.</h2>
+      <p class="fin__lead">Don't let the up-front number stall the project you actually want. Ask us about monthly payment options through our financing partner &mdash; checking your options takes minutes and won't affect your credit score.</p>
+      <ul class="fin__points">
+        <li>Fast decisions &mdash; often within minutes</li>
+        <li>Soft credit check to see your options</li>
+        <li>Pay over time on projects big and small</li>
+      </ul>
+      <a class="btn btn--red" href="#contact">Ask about financing</a>
+      <p class="fin__fine">Financing is subject to approval by our third-party lending partner.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section contact" id="contact">
   <div class="wrap contact__in">
     <div class="contact__info">
@@ -400,7 +731,7 @@
       <div class="leadcard__top">
         <span class="leadcard__badge">100% Free · No Obligation</span>
         <h3>Get your project estimate</h3>
-        <p>Answer a few quick questions and we'll come back with a free, no-pressure estimate — usually within one business day.</p>
+        <p>Answer a few quick questions and we'll come back with a free, no-pressure estimate.</p>
       </div>
       <button type="button" class="btn btn--red btn--block" data-quote="contact-card">Start My Free Quote →</button>
       <ul class="leadcard__reassure">
@@ -419,7 +750,7 @@
     <div class="leadmag__copy">
       <p class="kicker">Free download</p>
       <h2 class="section__title">Planning a remodel? Start here.</h2>
-      <p class="section__lead">Get our free <strong>Grand Strand Renovation Planning Guide</strong> — budgeting tips, a project checklist, the questions to ask any contractor, and how to avoid the most common (and costly) mistakes.</p>
+      <p class="section__lead">Get our free <strong>Renovation Planning Guide</strong> — budgeting tips, a project checklist, the questions to ask any contractor, and how to avoid the most common (and costly) mistakes.</p>
       <ul class="leadmag__bullets">
         <li>Realistic budget ranges for Grand Strand projects</li>
         <li>A step-by-step renovation checklist</li>
@@ -431,7 +762,6 @@
       <label>Name<input type="text" name="name" placeholder="Your name" required /></label>
       <label>Email<input type="email" name="email" placeholder="you@email.com" required /></label>
       <button type="submit" class="btn btn--red btn--block">Get the Free Guide</button>
-      <p class="leadmag__note" id="guideNote">No spam. We'll send the guide and an occasional tip — unsubscribe anytime.</p>
     </form>
   </div>
 </section>
@@ -444,7 +774,7 @@
     <div class="footer__brand">
       <img src="assets/img/logo-trans.png" alt="JICON Construction" />
       <p>Licensed &amp; insured general contractor proudly transforming homes and businesses across the Grand Strand, South Carolina.</p>
-      <p class="footer__tag">Shaping tomorrow, today.</p>
+      <p class="footer__tag">Building tomorrow, today.</p>
     </div>
     <div class="footer__col">
       <h4>Services</h4>
@@ -591,7 +921,7 @@
           </label>
           <div class="wiz__summary" id="wizSummary"></div>
           <button type="submit" class="btn btn--red btn--block" id="wizSubmit">Get My Free Estimate →</button>
-          <p class="wiz__trust">🔒 We reply within one business day. Your info is never shared or sold.</p>
+          <p class="wiz__trust">🔒 Your info is never shared or sold.</p>
         </form>
       </div>
 
@@ -599,7 +929,7 @@
       <div class="wiz__step wiz__success" data-step="done">
         <div class="wiz__check">✓</div>
         <h3 class="wiz__q">You're all set! 🎉</h3>
-        <p>Thanks — your request is in. A member of the JICON team will reach out within one business day with your free estimate.</p>
+        <p>Thanks — your request is in. A member of the JICON team will reach out soon with your free estimate.</p>
         <p class="wiz__success-call">Want to talk sooner?</p>
         <a href="tel:+18436554121" class="btn btn--red btn--block"><svg class="ic" viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"/></svg> Call 843-655-4121 now</a>
       </div>

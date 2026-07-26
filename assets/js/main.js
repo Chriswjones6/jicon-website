@@ -243,10 +243,11 @@
   var exitPop = $('#exitPop');
   function showExit() {
     if (!exitPop) return;
-    if (sessionStorage.getItem('jiconExit') === '1') return;
+    var _ss; try { _ss = window.sessionStorage; } catch(e) { _ss = null; }
+    if (_ss && _ss.getItem('jiconExit') === '1') return;
     if (wiz.classList.contains('open')) return;
     exitPop.classList.add('open'); exitPop.setAttribute('aria-hidden', 'false');
-    sessionStorage.setItem('jiconExit', '1');
+    try { if (_ss) _ss.setItem('jiconExit', '1'); } catch(e) {}
     track('exit_intent_shown', {});
   }
   function closeExit() {
@@ -294,4 +295,75 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closeLb(); closeExit(); if (wiz.classList.contains('open')) closeWiz(); }
   });
+})();
+
+
+/* ============ Animated stat counters ============ */
+(function(){
+  'use strict';
+  var els = Array.prototype.slice.call(document.querySelectorAll('.stat__num[data-count]'));
+  if(!els.length) return;
+  var reduce = false; try { reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e) {}
+  /* JS is alive: reset to 0 so the count-up is visible; if JS never runs, the HTML already shows the real numbers */
+  if (!reduce) els.forEach(function(el){ el.textContent = '0'; });
+  function finish(el,n){ el.textContent = fmt(el,n); }
+  function fmt(el,v){
+    var plain = el.getAttribute('data-plain');
+    var s = plain ? String(v) : v.toLocaleString('en-US');
+    return s + (el.getAttribute('data-suffix') || '');
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var el = e.target, n = parseInt(el.getAttribute('data-count'),10) || 0;
+      if(reduce || !('requestAnimationFrame' in window)) return finish(el,n);
+      var t0 = performance.now(), dur = 1500;
+      (function tick(t){
+        var p = Math.min((t-t0)/dur, 1);
+        el.textContent = fmt(el, Math.round(n*(1-Math.pow(1-p,3))));
+        if(p<1) requestAnimationFrame(tick);
+      })(t0);
+    });
+  }, {threshold:.5});
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+/* ============ Before / After slider ============ */
+(function(){
+  'use strict';
+  var sliders = Array.prototype.slice.call(document.querySelectorAll('.ba'));
+  sliders.forEach(function(ba){ initBA(ba); });
+  function initBA(ba){
+  var lastP = 50;
+  function setSplit(p){
+    p = Math.max(2, Math.min(98, p));
+    if(p < lastP - 0.3) ba.classList.add('face-left');      /* moving left: flip, push left */
+    else if(p > lastP + 0.3) ba.classList.remove('face-left'); /* moving right: push right */
+    lastP = p;
+    ba.style.setProperty('--split', p+'%');
+    ba.setAttribute('aria-valuenow', Math.round(p));
+  }
+  function fromEvent(ev){
+    var r = ba.getBoundingClientRect();
+    var x = (ev.touches ? ev.touches[0].clientX : ev.clientX) - r.left;
+    setSplit(x / r.width * 100);
+  }
+  var drag = false;
+  /* touch fallback for webviews where pointer events are swallowed */
+  ba.addEventListener('touchstart', function(e){ drag = true; ba.classList.add('dragging'); fromEvent(e); e.preventDefault(); }, {passive:false});
+  ba.addEventListener('touchmove', function(e){ if(drag){ fromEvent(e); e.preventDefault(); } }, {passive:false});
+  ba.addEventListener('touchend', function(){ drag = false; ba.classList.remove('dragging'); });
+  /* tap/click anywhere also jumps the split there */
+  ba.addEventListener('click', function(e){ fromEvent(e); });
+  ba.addEventListener('pointerdown', function(e){ drag = true; ba.classList.add('dragging'); try{ ba.setPointerCapture(e.pointerId); }catch(err){} fromEvent(e); });
+  ba.addEventListener('pointermove', function(e){ if(drag) fromEvent(e); });
+  ba.addEventListener('pointerup', function(){ drag = false; ba.classList.remove('dragging'); });
+  ba.addEventListener('pointercancel', function(){ drag = false; ba.classList.remove('dragging'); });
+  ba.addEventListener('keydown', function(e){
+    var now = parseFloat(getComputedStyle(ba).getPropertyValue('--split')) || 50;
+    if(e.key === 'ArrowLeft'){ setSplit(now-4); e.preventDefault(); }
+    if(e.key === 'ArrowRight'){ setSplit(now+4); e.preventDefault(); }
+  });
+  }
 })();
