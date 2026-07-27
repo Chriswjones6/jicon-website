@@ -412,4 +412,42 @@
     if(els[0].readyState >= 3){ start(); }
     else { els[0].addEventListener('canplay', start, { once: true }); els[0].load(); }
   })();
+
+  /* ---- Careers application form ---- */
+  (function () {
+    var form = document.getElementById('careersForm');
+    if (!form) return;
+    var note = document.getElementById('careersNote');
+    var btn = document.getElementById('careersSubmit');
+    var q = function (n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value : ''; };
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = q('name').trim(), phone = q('phone').trim(), email = q('email').trim();
+      if (!name || !phone || !email) {
+        note.textContent = 'Please add your name, phone and email.'; note.className = 'careers__note'; return;
+      }
+      var orig = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…';
+      var action = form.getAttribute('action') || '';
+      var configured = action.indexOf('formspree.io') > -1 && action.indexOf('your-form-id') === -1;
+      function ok() {
+        form.reset(); btn.disabled = false; btn.textContent = orig;
+        note.textContent = 'Thanks — we got your application and will be in touch.'; note.className = 'careers__note ok';
+        if (window.track) track('careers_submit', { trade: q('trade') });
+      }
+      function fail() {
+        btn.disabled = false; btn.textContent = orig;
+        var body = 'JOB APPLICATION\n\nName: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email +
+          '\nTrade/role: ' + q('trade') + '\nYears experience: ' + q('experience') +
+          '\nRésumé link: ' + q('resume_link') + '\n\nExperience: ' + q('message') + '\n';
+        var mailto = 'mailto:getJICON@gmail.com?subject=' + encodeURIComponent('Job Application — JICON Construction') +
+          '&body=' + encodeURIComponent(body);
+        var w = window.open(mailto, '_blank'); if (!w) window.location.href = mailto;
+        note.textContent = 'Opening your email app to send your application…'; note.className = 'careers__note';
+      }
+      if (configured) {
+        fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+          .then(function (r) { if (r.ok) ok(); else fail(); }).catch(fail);
+      } else { fail(); }
+    });
+  })();
 })();

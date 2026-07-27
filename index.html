@@ -603,7 +603,23 @@
     <p class="kicker kicker--light">We're hiring</p>
     <h2 class="section__title section__title--light">Join the JICO Construction crew.</h2>
     <p class="careers__lead">We're always looking for motivated, hard-working people who take pride in their craft. If that's you, we want to hear from you.</p>
-    <a href="mailto:getJICON@gmail.com?subject=Careers%20—%20Application%20%2F%20Resume&body=Hi%20JICON%20team%2C%0A%0AName%3A%0APhone%3A%0ATrade%2Fexperience%3A%0A%0A(Please%20attach%20your%20resume.)" class="btn btn--red">Apply Now</a>
+    <form class="careers__form" id="careersForm" action="https://formspree.io/f/mqerwboe" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="JICON Careers — Job Application">
+      <input type="hidden" name="form_type" value="Job Application">
+      <div class="cf-row">
+        <label>Name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Phone<input type="tel" name="phone" required autocomplete="tel"></label>
+      </div>
+      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <div class="cf-row">
+        <label>Trade / role<input type="text" name="trade" placeholder="Carpenter, painter, laborer…"></label>
+        <label>Years of experience<input type="text" name="experience" placeholder="e.g. 5"></label>
+      </div>
+      <label>Résumé link <span class="cf-opt">(optional)</span><input type="url" name="resume_link" placeholder="Google Drive, Dropbox or LinkedIn URL"></label>
+      <label>Tell us about your experience<textarea name="message" rows="3" placeholder="Trades, certifications, and what you're looking for…"></textarea></label>
+      <button type="submit" class="btn btn--red" id="careersSubmit">Submit Application</button>
+      <p class="careers__note" id="careersNote" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
