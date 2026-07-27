@@ -324,11 +324,11 @@ a{color:inherit;text-decoration:none}
 .leadcard__or a:hover{text-decoration:underline}
 
 /* ---- Lead magnet ---- */
-.leadmag{background:var(--bg-2);border-top:1px solid var(--line)}
+.leadmag{background:#fff;border-top:1px solid rgba(0,0,0,.08)}
 .leadmag__in{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;
   padding:clamp(3.5rem,7vw,5.5rem) 0}
 .leadmag__bullets{list-style:none;margin-top:1.4rem}
-.leadmag__bullets li{position:relative;padding:.4rem 0 .4rem 1.8rem;color:#d4d4d8}
+.leadmag__bullets li{position:relative;padding:.4rem 0 .4rem 1.8rem;color:#45454d}
 .leadmag__bullets li::before{content:"📘";position:absolute;left:0;top:.4rem}
 .leadmag__form{background:var(--bg-3);border:1px solid var(--line);border-radius:var(--r);padding:1.8rem;box-shadow:var(--shadow)}
 .leadmag__form h3{font-family:var(--display);font-weight:800;color:#fff;font-size:1.25rem;margin-bottom:1.1rem}
@@ -494,8 +494,8 @@ a{color:inherit;text-decoration:none}
    Services, Our Work, About and Reviews go white for contrast. */
 #services, #work, #about, #reviews{background:#ffffff;color:#17171a}
 #work.section--alt, #about.section--alt{background:#f6f6f7}
-#services .section__title, #work .section__title, #about .section__title, #reviews .section__title{color:#141416}
-#services .section__lead, #work .section__lead, #about .section__lead, #reviews .section__lead{color:#55555e}
+#services .section__title, #work .section__title, #about .section__title, #reviews .section__title, #guide .section__title{color:#141416}
+#services .section__lead, #work .section__lead, #about .section__lead, #reviews .section__lead, #guide .section__lead{color:#55555e}
 #services p, #about p{color:#4a4a52}
 /* service cards on white */
 #services .svc{background:#fff;border-color:rgba(0,0,0,.10);box-shadow:0 12px 30px -18px rgba(0,0,0,.22)}
