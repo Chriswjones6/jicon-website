@@ -553,8 +553,8 @@ a{color:inherit;text-decoration:none}
    reviews WHITE -> areas BLACK -> careers/contact BLACK -> footer BLACK */
 
 /* ---- 1. HERO: white veil over the video, dark text ---- */
-.hero__scrim{background:linear-gradient(100deg,rgba(255,255,255,.94) 8%,rgba(255,255,255,.80) 42%,rgba(255,255,255,.45) 78%),
-             linear-gradient(0deg,rgba(255,255,255,.92),transparent 38%)}
+.hero__scrim{background:linear-gradient(100deg,rgba(255,255,255,.90) 6%,rgba(255,255,255,.64) 40%,rgba(255,255,255,.20) 74%,rgba(255,255,255,.04) 100%),
+             linear-gradient(0deg,rgba(255,255,255,.58),transparent 34%)}
 .hero__title{color:#131316}
 .hero__sub{color:#45454d}
 .hero .kicker--light{color:var(--red)}
