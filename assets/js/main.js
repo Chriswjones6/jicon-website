@@ -366,4 +366,50 @@
     if(e.key === 'ArrowRight'){ setSplit(now+4); e.preventDefault(); }
   });
   }
+
+  /* ---- Hero video montage (self-hosted crossfading background clips) ---- */
+  /* Edit HERO_CLIPS to reorder/swap. Only the first clip preloads eagerly; the rest
+     load just before they're needed, so initial page weight stays light (~3 MB).
+     prefers-reduced-motion users just see the hero-home.jpg fallback (montage hidden by CSS). */
+  var HERO_CLIPS = [
+    'assets/video/hero-coastal-travel.mp4',
+    'assets/video/hero-homes-aerial.mp4',
+    'assets/video/hero-planning-plans.mp4',
+    'assets/video/hero-commercial-framing.mp4',
+    'assets/video/hero-kitchen-white.mp4',
+    'assets/video/hero-flooring-tile.mp4',
+    'assets/video/hero-coastal-sunrise.mp4'
+  ];
+  (function initHeroMontage(){
+    var mount = document.getElementById('heroMontage');
+    if(!mount) return;
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var DWELL = 5000, LEAD = 1500;
+    var els = HERO_CLIPS.map(function(src, i){
+      var v = document.createElement('video');
+      v.src = src; v.muted = true; v.loop = true; v.playsInline = true;
+      v.setAttribute('muted',''); v.setAttribute('playsinline','');
+      v.preload = (i === 0 ? 'auto' : 'none');
+      mount.appendChild(v);
+      return v;
+    });
+    if(!els.length) return;
+    var cur = 0;
+    function play(v){ var p = v.play(); if(p && p['catch']) p['catch'](function(){}); }
+    function step(){
+      var next = (cur + 1) % els.length;
+      els[next].preload = 'auto';
+      play(els[next]);
+      setTimeout(function(){
+        els[next].classList.add('on');
+        els[cur].classList.remove('on');
+        var old = cur; cur = next;
+        setTimeout(function(){ els[old].pause(); }, 950);
+        setTimeout(step, DWELL - LEAD);
+      }, LEAD);
+    }
+    function start(){ els[0].classList.add('on'); play(els[0]); setTimeout(step, DWELL - LEAD); }
+    if(els[0].readyState >= 3){ start(); }
+    else { els[0].addEventListener('canplay', start, { once: true }); els[0].load(); }
+  })();
 })();

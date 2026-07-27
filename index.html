@@ -98,15 +98,12 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero__bg" style="background-image:url('assets/img/hero-home.jpg')"></div>
-  <!-- VIDEO HERO — muted looping background. The photo above stays as the fallback while
-       the video loads (and on slow connections). TO SWAP IN JICON'S OWN FOOTAGE: upload a
-       drone/jobsite/timelapse clip to the @getJICON YouTube channel (can be Unlisted),
-       then replace VIDEO_ID below in BOTH places. Current ID is a Grand Strand 4K aerial
-       placeholder. -->
-  <div class="hero__video" aria-hidden="true">
-    <iframe src="https://www.youtube.com/embed/cM_r7YTb9Zk?autoplay=1&mute=1&loop=1&playlist=cM_r7YTb9Zk&controls=0&rel=0&modestbranding=1&iv_load_policy=3&start=8"
-      title="Background video" loading="lazy" allow="autoplay; encrypted-media" tabindex="-1"></iframe>
-  </div>
+  <!-- VIDEO HERO — self-hosted montage of 7 muted looping clips that crossfade (see initHeroMontage()
+       in assets/js/main.js for the clip list & order). The hero-home.jpg above is the fallback while
+       clips load, on slow connections, and for prefers-reduced-motion. Clips live in assets/video/.
+       TO SWAP/REORDER: edit the HERO_CLIPS array in main.js. To add JICON's own footage, compress it
+       (~1080p, muted, no audio) into assets/video/ and add its filename to that array. -->
+  <div class="hero__montage" id="heroMontage" aria-hidden="true"></div>
   <div class="hero__scrim"></div>
   <div class="wrap hero__in">
     <p class="kicker kicker--light">Building tomorrow, today</p>

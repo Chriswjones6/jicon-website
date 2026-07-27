@@ -219,13 +219,11 @@ a{color:inherit;text-decoration:none}
 @media(max-width:760px){.reviews__in{grid-template-columns:1fr}}
 
 /* ---------- Areas ---------- */
-.areas{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.areas li{background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:.95rem 1.1rem;
-  font-family:var(--display);font-weight:600;color:#e4e4e7;display:flex;align-items:center;gap:.6rem;transition:.2s}
-.areas li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);flex:none}
-.areas li:hover{border-color:var(--red);transform:translateX(3px)}
-@media(max-width:860px){.areas{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.areas{grid-template-columns:1fr 1fr}}
+.areas{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.areas li{background:var(--bg-3);border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;
+  font-family:var(--display);font-weight:600;font-size:.92rem;color:#e4e4e7;display:inline-flex;align-items:center;gap:.5rem;transition:.2s}
+.areas li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);flex:none}
+.areas li:hover{border-color:var(--red);color:#fff}
 
 /* ---------- Careers ---------- */
 .careers{position:relative;background-size:cover;background-position:center;background-attachment:fixed;text-align:center}
@@ -436,6 +434,12 @@ a{color:inherit;text-decoration:none}
 .hero__video{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .hero__video iframe{position:absolute;top:50%;left:50%;width:177.78vh;min-width:100%;height:100vh;min-height:56.25vw;transform:translate(-50%,-50%);border:0}
 @media (prefers-reduced-motion:reduce){.hero__video{display:none}}
+
+/* Hero montage — self-hosted crossfading background clips */
+.hero__montage{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero__montage video{position:absolute;top:50%;left:50%;width:100%;height:100%;object-fit:cover;transform:translate(-50%,-50%);opacity:0;transition:opacity .9s ease}
+.hero__montage video.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.hero__montage{display:none}}
 
 /* ============ BEFORE / AFTER ============ */
 .ba{position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--bg-3);user-select:none;-webkit-user-select:none;touch-action:none;cursor:ew-resize;margin-bottom:12px;box-shadow:var(--shadow)}
