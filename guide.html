@@ -43,14 +43,14 @@
   .cta a.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.3)}
   .foot{text-align:center;color:var(--muted);font-size:.82rem;margin-top:26px;padding:0 56px}
   .printbar{position:sticky;top:0;z-index:5;background:var(--red);color:#fff;text-align:center;padding:11px;font-family:"Archivo";font-weight:700;font-size:.95rem}
-  .printbar button{background:#fff;color:var(--red);border:0;border-radius:7px;padding:.45rem 1.1rem;font-family:"Archivo";font-weight:700;cursor:pointer;margin-left:.6rem}
+  .printbar button,.printbar a.dl{background:#fff;color:var(--red);border:0;border-radius:7px;padding:.45rem 1.1rem;font-family:"Archivo";font-weight:700;cursor:pointer;margin-left:.6rem;text-decoration:none;display:inline-block}
   @media print{.printbar{display:none}body{background:#fff}.sheet{box-shadow:none;margin:0;max-width:none}.cta a{border:1px solid #999}}
   @media(max-width:640px){.ghead,.body,.foot{padding-left:26px;padding-right:26px}.cta{margin-left:26px;margin-right:26px}.gtitle{font-size:1.8rem}}
 </style>
 </head>
 <body>
 <div class="printbar">📘 Your free guide is ready
-  <button onclick="window.print()">Save as PDF / Print</button>
+  <a class="dl" href="assets/JICON-Renovation-Planning-Guide.pdf" download>⬇ Download PDF</a>
 </div>
 
 <div class="sheet">
@@ -100,7 +100,7 @@
       <li>Is the work covered by a written contract and warranty?</li>
       <li>Who is my day-to-day point of contact?</li>
       <li>Will you handle permits and inspections?</li>
-      <li>What's the payment schedule — and is there a large upfront deposit?</li>
+      <li>What's the payment schedule — and is there an upfront deposit?</li>
       <li>Do you use your own crew or subcontractors?</li>
       <li>What's a realistic timeline, start to finish?</li>
       <li>How do you handle changes and unexpected issues?</li>

@@ -283,10 +283,10 @@
       if (!name || !email) return;
       track('lead_magnet_submit', { email: email });
 
-      // Deliver the guide (opens the printable guide page)
-      window.open('guide.html', '_blank');
+      // Deliver the guide as a downloadable PDF (opens in a new tab, ready to save)
+      window.open('assets/JICON-Renovation-Planning-Guide.pdf', '_blank');
       guideForm.reset();
-      guideNote.textContent = 'Done! Your guide is opening in a new tab. Check there to read or save it.';
+      guideNote.textContent = 'Done! Your PDF guide is opening in a new tab — download or save it from there.';
       guideNote.className = 'leadmag__note ok';
     });
   }
